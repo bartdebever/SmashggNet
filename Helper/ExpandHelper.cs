@@ -9,6 +9,7 @@ namespace SmashggHandler.Helper
 {
     public static class ExpandHelper
     {
+        private static string _defaultExpand => "expand[]=";
         public static string GetExpandStringFromCollection(ICollection<Expand> expands)
         {
             if (!expands.Any())
@@ -29,7 +30,13 @@ namespace SmashggHandler.Helper
             switch (expand)
             {
                 case Expand.Event:
-                    return "expand=[]=event";
+                    return $"{_defaultExpand}event";
+                case Expand.Groups:
+                    return $"{_defaultExpand}groups";
+                case Expand.Phase:
+                    return $"{_defaultExpand}phase";
+                case Expand.Stations:
+                    return $"{_defaultExpand}stations";
             }
             throw new ExpandNotFoundException();
         }
