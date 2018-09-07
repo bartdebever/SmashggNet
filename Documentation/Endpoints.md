@@ -12,4 +12,5 @@ This file will contain a list of endpoints know with what calls they support.
 
 # Phase Groups (brackets)
 **phase_group/<phaseGroupId>** Gets a phase group based on its id.
+  
 **tournament/<tournamentName>/events/<eventName><bracketId><phaseGroupId>** WIP
