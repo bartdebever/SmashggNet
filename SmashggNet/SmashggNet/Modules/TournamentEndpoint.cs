@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using RestSharp;
-using SmashggHandler.Exceptions;
-using SmashggHandler.Helper;
-using SmashggHandler.Models;
-using SmashggHandler.Modules.Interfaces;
+using SmashggNet.Exceptions;
+using SmashggNet.Helper;
+using SmashggNet.Models;
+using SmashggNet.Modules.Interfaces;
 
-namespace SmashggHandler.Modules
+namespace SmashggNet.Modules
 {
     public class TournamentEndpoint : ITournamentEndpoint
     {
@@ -25,7 +23,7 @@ namespace SmashggHandler.Modules
             var request = new RestRequest($"{TournamentEndpointUrl}{name}{expandList}", Method.GET);
 
             var response = await client.ExecuteTaskAsync(request);
-            if(!response.IsSuccessful)
+            if (!response.IsSuccessful)
                 throw new TournamentNotFoundException(); //Should most likely be an connection error exception
 
             return JsonConvert.DeserializeObject<TournamentRoot>(response.Content);

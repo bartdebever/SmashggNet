@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace SmashggHandler.Models
+namespace SmashggNet.Models
 {
     public class TournamentRoot
     {
@@ -15,12 +13,16 @@ namespace SmashggHandler.Models
     {
         [JsonProperty("tournament")]
         public Tournament Tournament { get; set; }
+
         [JsonProperty("event")]
         public List<Event> Events { get; set; }
+
         [JsonProperty("videogame")]
         public List<Videogame> Videogames { get; set; }
+
         [JsonProperty("phase")]
         public List<Phase> Phases { get; set; }
+
         [JsonProperty("group")]
         public List<Group> Groups { get; set; }
     }

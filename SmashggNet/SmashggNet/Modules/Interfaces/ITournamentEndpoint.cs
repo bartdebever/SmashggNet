@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using SmashggHandler.Models;
+using SmashggNet.Models;
 
-namespace SmashggHandler.Modules.Interfaces
+namespace SmashggNet.Modules.Interfaces
 {
     public interface ITournamentEndpoint
     {

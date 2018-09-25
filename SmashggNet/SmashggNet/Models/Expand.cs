@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SmashggHandler.Models
+﻿namespace SmashggNet.Models
 {
     public enum Expand
     {

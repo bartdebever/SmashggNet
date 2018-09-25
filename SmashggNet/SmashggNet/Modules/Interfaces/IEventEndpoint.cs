@@ -1,10 +1,10 @@
-using System;
 using System.Collections.Generic;
-using SmashggHandler.Models;
+using SmashggNet.Models;
 
-namespace SmashggNet.Modules.Interfaces{
+namespace SmashggNet.Modules.Interfaces
+{
     public interface IEventEndpoint
     {
-        Event GetEventById (int eventId, ICollection<Expand> expands);
+        Event GetEventById(int eventId, ICollection<Expand> expands);
     }
 }

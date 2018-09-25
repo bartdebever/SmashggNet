@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-using System.Text;
 
-namespace SmashggHandler.Exceptions
+namespace SmashggNet.Exceptions
 {
     [Serializable]
     public class TournamentNotFoundException : Exception

@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SmashggHandler.Exceptions;
-using SmashggHandler.Models;
+using SmashggNet.Exceptions;
+using SmashggNet.Models;
 
-namespace SmashggHandler.Helper
+namespace SmashggNet.Helper
 {
     public static class ExpandHelper
     {
         private static string _defaultExpand => "expand[]=";
+
         public static string GetExpandStringFromCollection(ICollection<Expand> expands)
         {
             if (!expands.Any())
@@ -31,10 +31,13 @@ namespace SmashggHandler.Helper
             {
                 case Expand.Event:
                     return $"{_defaultExpand}event";
+
                 case Expand.Groups:
                     return $"{_defaultExpand}groups";
+
                 case Expand.Phase:
                     return $"{_defaultExpand}phase";
+
                 case Expand.Stations:
                     return $"{_defaultExpand}stations";
             }

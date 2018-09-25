@@ -1,4 +1,3 @@
-using System;
 using Xunit;
 
 namespace SmashggNetTests
@@ -8,7 +7,6 @@ namespace SmashggNetTests
         [Fact]
         public void Test1()
         {
-
         }
     }
 }

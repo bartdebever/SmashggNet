@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace SmashggHandler.Exceptions
+namespace SmashggNet.Exceptions
 {
     /// <summary>
     /// Used when the expand does not have a string variant yet, in normal use this should never happen.

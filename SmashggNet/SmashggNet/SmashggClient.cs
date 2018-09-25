@@ -1,8 +1,7 @@
-﻿using System;
-using SmashggHandler.Modules;
-using SmashggHandler.Modules.Interfaces;
+﻿using SmashggNet.Modules;
+using SmashggNet.Modules.Interfaces;
 
-namespace SmashggHandler
+namespace SmashggNet
 {
     public class SmashggClient
     {

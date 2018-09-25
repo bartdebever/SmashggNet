@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace SmashggHandler.Models
+namespace SmashggNet.Models
 {
     public class RootObject<Entity> where Entity : class
     {
