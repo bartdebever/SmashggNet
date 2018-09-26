@@ -23,6 +23,7 @@ namespace SmashggNet.Modules
             var request = new RestRequest($"{TournamentEndpointUrl}{name}{expandList}", Method.GET);
 
             var response = await client.ExecuteTaskAsync(request);
+
             if (!response.IsSuccessful)
                 throw new TournamentNotFoundException(); //Should most likely be an connection error exception
 
@@ -33,9 +34,11 @@ namespace SmashggNet.Modules
         {
             var client = new RestClient(Uri);
             var request = new RestRequest($"{UpcomingTournaments}", Method.GET);
+
             var response = await client.ExecuteTaskAsync(request);
             if (!response.IsSuccessful)
                 throw new TournamentNotFoundException();
+
             return JsonConvert.DeserializeObject<TournamentScheduleRoot>(response.Content);
         }
     }
