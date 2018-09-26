@@ -8,8 +8,13 @@ namespace SmashggNet.Helper
 {
     public static class ExpandHelper
     {
-        private static string _defaultExpand => "expand[]=";
+        private static string DefaultExpand => "expand[]=";
 
+        /// <summary>
+        /// Creates an expand string for the request based on the provided list
+        /// </summary>
+        /// <param name="expands">The expand collection needing to be made into a string</param>
+        /// <returns></returns>
         public static string GetExpandStringFromCollection(ICollection<Expand> expands)
         {
             if (!expands.Any())
@@ -18,30 +23,42 @@ namespace SmashggNet.Helper
             var stringBuilder = new StringBuilder("?");
             foreach (var expand in expands)
             {
-                stringBuilder.Append($"{GetStringFromExpand(expand)}&");
+                GetStringFromExpand(expand, ref stringBuilder);
             }
             stringBuilder.Remove(stringBuilder.Length - 1, 1); //Removes the last & sign at the end.
 
             return stringBuilder.ToString();
         }
 
-        private static string GetStringFromExpand(Expand expand)
+        /// <summary>
+        /// Adds the expand string to the <see cref="StringBuilder"/> based on the enum provided
+        /// </summary>
+        /// <param name="expand">The enum needing to be converted to an expand string</param>
+        /// <param name="stringBuilder">The string builder we want to expand into</param>
+        private static void GetStringFromExpand(Expand expand, ref StringBuilder stringBuilder)
         {
             switch (expand)
             {
+                default:
+                    throw new ExpandNotFoundException();
+
                 case Expand.Event:
-                    return $"{_defaultExpand}event";
+                    stringBuilder.Append($"{DefaultExpand}event&^^");
+                    return;
 
                 case Expand.Groups:
-                    return $"{_defaultExpand}groups";
+                    stringBuilder.Append($"{DefaultExpand}groups&");
+                    return;
 
                 case Expand.Phase:
-                    return $"{_defaultExpand}phase";
+                    stringBuilder.Append($"{DefaultExpand}phase&");
+                    return;
 
                 case Expand.Stations:
-                    return $"{_defaultExpand}stations";
+                    stringBuilder.Append($"{DefaultExpand}stations&");
+                    return;
             }
-            throw new ExpandNotFoundException();
+            
         }
     }
 }
