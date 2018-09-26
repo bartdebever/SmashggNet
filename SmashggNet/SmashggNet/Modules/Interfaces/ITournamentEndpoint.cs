@@ -12,14 +12,14 @@ namespace SmashggNet.Modules.Interfaces
         /// </summary>
         /// <param name="name">The name of the tournament object you want to get</param>
         /// <param name="expands">The fields that should be expanded</param>
-        /// <returns>A TournamentRoot Object.</returns>
+        /// <returns>A <see cref="TournamentRoot"/> instance.</returns>
         Task<TournamentRoot> GetTournamentByName(string name, ICollection<Expand> expands);
 
         /// <summary>
         /// Gets the upcoming tournaments for all games on Smash.gg
         /// Will be configurable later on.
         /// </summary>
-        /// <returns>A TournamentScheduleRoot</returns>
+        /// <returns>A <see cref="TournamentScheduleRoot"/> instance</returns>
         Task<TournamentScheduleRoot> GetUpcomingTournaments();
     }
 }
